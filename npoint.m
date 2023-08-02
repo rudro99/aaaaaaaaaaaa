@@ -1,0 +1,21 @@
+clc;
+clear;
+close all;
+x=input('Enter the sequence:');
+N=input('Enter length: ');
+m=abs(fft(x,N)); 
+disp('Output Magnitude:');
+disp(m);
+n=0:1:N-1;
+subplot(2,2,1);
+stem(n,m);
+xlabel('Length');
+ylabel('Amplitude of x(n)');
+title('Magnitude');
+
+an=angle(fft(x,N));
+subplot(2,2,2);
+stem(n,an);
+xlabel('Length');
+ylabel('phase of x(n)');
+title('phase spectrum');
